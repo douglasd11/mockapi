@@ -1,10 +1,13 @@
 function eliminar() {
     var id = document.formulario.id.value;
 
-    fetch("https://65590165e93ca47020a9fbec.mockapi.io/api/v1/usuarios/" + id, {
+    fetch("http://localhost:3001/api/producto/borrarProducto", {
         method: 'DELETE',
-        headers: { 'Content-type': 'application/json' }
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({
+            id: id
+        })
     })
-    .then((response) => response.json())
-    .then((response) => { window.location.href = "index.html" });
+    // .then((response) => response.json())
+    .then((response) => { window.location.href = "productos.html" });
 }

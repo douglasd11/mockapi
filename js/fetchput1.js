@@ -1,23 +1,30 @@
 function actualizar() {
-    var id = document.formulario.id.value;
-    var id_se = document.formulario.id_se.value;
+    var id = document.formulario.id_p.value;
+    var id_se = document.formulario.id_serial.value;
     var nom = document.formulario.nombre.value;
     var cat = document.formulario.categoria.value;
     var img = document.formulario.imagen.value;
     var mod = document.formulario.modelo.value;
+    var ser = document.formulario.serie.value;
+    var mar = document.formulario.marca.value;
+    var fab = document.formulario.fabricante.value;
 
-    fetch("https://65590165e93ca47020a9fbec.mockapi.io/api/v1/usuarios/" + id, {
+    fetch("http://localhost:3001/api/producto/actualizarProducto", {
         method: 'PUT',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
-            id_serial: id_se,
+            id: id,
+            idserial: id_se,
             nombre: nom,
             categoria: cat,
             imagen: img,
             modelo: mod,
+            serie: ser,
+            marca: mar,
+            fabricante: fab
         
         })
     })
-    .then((response) => response.json())
-    .then((response) => { window.location.href = "index.html" });
+    // .then((response) => response.json())
+    .then((response) => { window.location.href = "productos.html" });
 }

@@ -1,18 +1,21 @@
 // Contenido de fetchget.js
-fetch("https://65590165e93ca47020a9fbec.mockapi.io/api/v1/usuarios")
+fetch("http://localhost:3001/api/producto/obtenerProductos")
     .then((response) => response.json())
     .then((response) => {
-        var tableContent = "<tr><td>ID_Serial</td><td>Nombre</td><td>Categoría</td><td>Imagen</td><td>Modelo</td></tr>";
+        var tableContent = "<tr><td>ID_Serial</td><td>Nombre</td><td>Categoría</td><td>Imagen</td><td>Modelo</td><td>Marca</td><td>Fabricante</td></tr>";
 
-        response.forEach((user) => {
+        response.forEach((producto) => {
+            console.log(producto)
             tableContent += "<tr>" +
-                "<td>" + user.id + "</td>" +
-                "<td>" + user.nombre + "</td>" +
-                "<td>" + user.categoria + "</td>" +
-                "<td><img src='" + user.imagen + "' width='30px' height='30px'></td>" +
-                "<td>" + user.modelo + "</td>" +
+                "<td>" + producto.idserial + "</td>" +
+                "<td>" + producto.nombre + "</td>" +
+                "<td>" + producto.categoria + "</td>" +
+                "<td><img src='" + producto.imagen + "' width='30px' height='30px'></td>" +
+                "<td>" + producto.modelo + "</td>" +
+                "<td>" + producto.marca + "</td>" +
+                "<td>" + producto.fabricante + "</td>" +
                 "</tr>";
         });
 
-        document.getElementById("users").innerHTML = tableContent;
+        document.getElementById("productos").innerHTML = tableContent;
     });

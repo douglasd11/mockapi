@@ -1,20 +1,23 @@
 // Contenido de fetchget.js
-fetch("https://65590165e93ca47020a9fbec.mockapi.io/api/v1/usuarios")
+fetch("http://localhost:3001/api/nomina/obtenerNominas")
     .then((response) => response.json())
     .then((response) => {
-        var tableContent = "<tr><td>ID</td><td>Nombre</td><td>Apellido</td><td>Correo</td><td>Imagen</td></tr>";
+        var tableContent = "<tr><td>ID</td><td>Nombre</td><td>Apellido</td><td>Foto</td><td>Correo</td><td>Direccion</td><td>Cargo</td><td>Salario</td></tr>";
 
-        response.forEach((user) => {
+        response.forEach((nomina) => {
             tableContent += "<tr>" +
-                "<td>" + user.id + "</td>" +
-                "<td>" + user.nombre + "</td>" +
-                "<td>" + user.apellido + "</td>" +
-                "<td>" + user.correo + "</td>" +
-                "<td><img src='" + user.imagen + "' width='30px' height='30px'></td>" +
-                "</tr>";
+                "<td>" + nomina.id + "</td>" +
+                "<td>" + nomina.nombre + "</td>" +
+                "<td>" + nomina.apellido + "</td>" +
+                "<td>" + nomina.foto + "</td>" +
+                "<td>" + nomina.correo + "</td>" +
+                "<td>" + nomina.direccion + "</td>" +
+                "<td>" + nomina.cargo + "</td>" +
+                "<td>" + nomina.salario + "</td>" +
+            "</tr>";
         });
 
-        document.getElementById("users").innerHTML = tableContent;
+        document.getElementById("nominas").innerHTML = tableContent;
     });
 
 
