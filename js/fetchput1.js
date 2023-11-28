@@ -9,7 +9,7 @@ function actualizar() {
     var mar = document.formulario.marca.value;
     var fab = document.formulario.fabricante.value;
 
-    fetch("http://localhost:3001/api/producto/actualizarProducto", {
+    fetch("https://api-gestor-empresa.onrender.com/api/producto/actualizarProducto", {
         method: 'PUT',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({

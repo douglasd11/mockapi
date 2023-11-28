@@ -1,7 +1,7 @@
 function eliminar() {
     var id = document.formulario.id.value;
 
-    fetch("http://localhost:3001/api/producto/borrarProducto", {
+    fetch("https://api-gestor-empresa.onrender.com/api/producto/borrarProducto", {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({

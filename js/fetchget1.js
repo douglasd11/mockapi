@@ -1,5 +1,5 @@
 // Contenido de fetchget.js
-fetch("http://localhost:3001/api/producto/obtenerProductos")
+fetch("https://api-gestor-empresa.onrender.com/api/producto/obtenerProductos")
     .then((response) => response.json())
     .then((response) => {
         var tableContent = "<tr><td>ID_Serial</td><td>Nombre</td><td>Categoría</td><td>Imagen</td><td>Modelo</td><td>Marca</td><td>Fabricante</td></tr>";

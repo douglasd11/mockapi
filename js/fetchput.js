@@ -8,7 +8,7 @@ function actualizar() {
     var car = document.formulario.cargo.value;
     var sal = document.formulario.salario.value;
 
-    fetch("http://localhost:3001/api/nomina/actualizarNomina", {
+    fetch("https://api-gestor-empresa.onrender.com/api/nomina/actualizarNomina", {
         method: 'PUT',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({

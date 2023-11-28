@@ -1,5 +1,5 @@
 // Contenido de fetchget.js
-fetch("http://localhost:3001/api/nomina/obtenerNominas")
+fetch("https://api-gestor-empresa.onrender.com/api/nomina/obtenerNominas")
     .then((response) => response.json())
     .then((response) => {
         var tableContent = "<tr><td>ID</td><td>Nombre</td><td>Apellido</td><td>Foto</td><td>Correo</td><td>Direccion</td><td>Cargo</td><td>Salario</td></tr>";
