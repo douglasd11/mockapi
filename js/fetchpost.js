@@ -9,7 +9,7 @@ function ingresar() {
     var car = document.formulario.cargo.value;
     var sal = document.formulario.salario.value;
 
-    fetch("https://api-gestor-empresa.onrender.com/api/nomina/agregarNomina", {
+    fetch("https://api-gestor-empresa-1z6w.onrender.com/api/nomina/agregarNomina", {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({

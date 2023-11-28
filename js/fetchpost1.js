@@ -12,7 +12,7 @@ function ingresar() {
     var mar = document.formulario.marca.value;
     var fab = document.formulario.fabricante.value;
 
-    fetch("https://api-gestor-empresa.onrender.com/api/producto/agregarProducto", {
+    fetch("https://api-gestor-empresa-1z6w.onrender.com/api/producto/agregarProducto", {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
         body: JSON.stringify({
